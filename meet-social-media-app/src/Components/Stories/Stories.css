@@ -1,0 +1,104 @@
+/* ===== FEEDS CONTAINER ===== */
+.feeds-container {
+  width: 100%;
+  background-color: #ffffff;
+  padding-top: 0;
+}
+
+/* ===== STORIES SECTION ===== */
+.stories {
+  padding: 6px 0 10px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* ===== STORY LIST ===== */
+.story ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 0 12px;             
+  margin: 0;
+  list-style: none;
+  overflow-x: auto;
+}
+
+/* hide scrollbar */
+.story ul::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===== SINGLE STORY ===== */
+.story li {
+  flex: 0 0 auto;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* ===== STORY IMAGE WRAPPER ===== */
+.story-image-wrapper {
+  position: relative;
+  width: 52px;
+  height: 52px;
+}
+
+/* ===== STORY IMAGE (RING) ===== */
+.story-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(
+    55deg,
+    #c13584,
+    #e1306c,
+    #fd1d1d,
+    #f56040,
+    #f77737
+  );
+  object-fit: cover;
+  box-shadow: 0 0 0 2px #ffffff inset;
+  transition: transform 0.2s ease;
+}
+
+/* ===== ADD STORY "+" BADGE ===== */
+.add-story {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 18px;
+  height: 18px;
+  background-color: #0095f6;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+}
+
+/* ===== STORY NAME ===== */
+.story li h2 {
+  font-size: 12px;
+  font-weight: 500;
+  color: #262626;
+  margin-top: 4px;
+  max-width: 70px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 480px) {
+  .story-image-wrapper {
+    width: 50px;
+    height: 50px;
+  }
+
+  .story li h2 {
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,100 @@
+/* ===== BOTTOM NAVBAR CONTAINER ===== */
+.navbar-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #ffffff;
+  border-top: 1px solid #e5e5e5;
+  z-index: 1000;
+}
+
+/* ===== NAV ===== */
+.navbar {
+  height: 100%;
+}
+
+/* ===== NAV LIST ===== */
+.navbar ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ===== NAV ITEM ===== */
+.navbar li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+/* ===== ICON STYLE ===== */
+.navbar li svg {
+  font-size: 24px;
+  color: #8e8e8e;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* ===== ACTIVE TAB ===== */
+.navbar li.active svg {
+  color: #000000;
+  transform: scale(1.15);
+}
+
+/* ===== HOVER (DESKTOP) ===== */
+@media (hover: hover) {
+  .navbar li:hover svg {
+    color: #262626;
+    transform: scale(1.1);
+  }
+}
+
+/* ===== SAFE AREA (iOS) ===== */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .navbar-container {
+    padding-bottom: env(safe-area-inset-bottom);
+    height: calc(60px + env(safe-area-inset-bottom));
+  }
+}
+
+/* ===== NAV ITEM ===== */
+.navbar li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* ===== TOOLTIP BODY ===== */
+.navbar li::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 50px;
+  background-color: #262626;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* ===== SHOW TOOLTIP ONLY ON HOVER ===== */
+@media (hover: hover) {
+  .navbar li:hover::after,
+  .navbar li:hover::before {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
