@@ -33,4 +33,6 @@ It allows users to connect, share posts, view stories, and interact with content
 Follow the steps below to run the project locally.
 
 ### Clone the Repository
-https://github.com/CodeWithPurnendra/Meet-social-media-app.git
+```
+git clone https://github.com/CodeWithPurnendra/Meet-social-media-app.git
+```
